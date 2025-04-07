@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loginPage">
+    <input type="text" id="username" placeholder="اسم المستخدم (6 أحرف أو أرقام)">
+    <input type="password" id="password" placeholder="كلمة المرور (6 أحرف أو أرقام)">
+    <button onclick="login()">تسجيل الدخول</button>
+    <button onclick="register()">إنشاء حساب جديد</button>
+  </div>
+
+  <div id="chatPage" style="display:none;">
+    <input type="text" id="searchUser" placeholder="ابحث عن مستخدم">
+    <button onclick="searchUser()">بحث</button>
+    <div id="chatContainer"></div>
+    <input type="file" id="fileInput" accept="image/*" onchange="sendImage()">
+    <textarea id="messageInput" placeholder="اكتب رسالتك..."></textarea>
+    <button onclick="sendMessage()">إرسال</button>
+    <button onclick="logout()">تسجيل الخروج</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
